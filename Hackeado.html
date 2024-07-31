@@ -17,16 +17,19 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="Estilos/Estilos.css">
+    <!-- JQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
-<body onload="document.body.style.opacity='1'">
+<body>
     <div class="container-fluid">
         <h1 class="text-center mt-5 mb-5">¡Esto es una prueba de Phishing!</h1>
         <div class="container text-center mb-5">
             <img class="img-fluid" src="Img/Phishing.png">
         </div>
         <p><strong>Recuerda que es muy importante:</strong></p>
-        <ul>
+        <ul class="consideraciones">
             <li><strong>Revisar</strong> la dirección <strong>URL</strong> del sitio donde ingresas datos importantes</li>
             <li><strong>Verificar</strong> el <strong>remitente</strong> del correo electrónico</li>
             <li>No hacer clic en enlaces sospechosos <strong>(Recuerda que los atacantes pueden recrear sitios que conozcas)</strong></li>
@@ -34,5 +37,14 @@
         </ul>
     </div>
 </body>
+
+<script>
+    $('.consideraciones li').each(function(index) {
+    $(this).delay(1000 * index).queue(function(next) {
+        $(this).addClass('visible');
+        next();
+    });
+});
+</script>
 
 </html>
